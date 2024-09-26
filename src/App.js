@@ -1,5 +1,6 @@
 // App.js
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import Composer from './components/composer';
 import Lightbox from './components/lighbox'; // Ensure the correct import name
 import CountdownClock from './components/countdownClock';
@@ -47,7 +48,16 @@ function App() {
   }, []);
 
   return (
+    
     <div className="App">
+      <Helmet>
+        <title>Celebrate your legal right to honour the real king</title>
+        <meta name="description" content="Request to swap the King's birthday public holiday for the real King's Birthday" />
+        <meta property="og:title" content="Celebrate your legal right to honour the real king" />
+        <meta property="og:description" content="Request to swap the King's birthday public holiday for the real King's Birthday" />
+        <meta property="og:image" content={`${process.env.PUBLIC_URL}/meta-image.png`} />
+        <meta property="og:url" content="https://therealking.com.au" />
+      </Helmet>
       <div className="container">
       <div className={`left-column ${isLeftColumnAnimated ? 'animate' : ''}`}>
         <div className='sports-pick-logo'>
@@ -55,7 +65,7 @@ function App() {
           </div>
         <img src={Lockup} alt="Description of the SVG" style={{ width: '100%', height: 'auto' }} />
           <p>
-            Use the public holiday substitution clause for a day off to celebrate King Wally. 
+          Request to swap the King's birthday public holiday for the real King's Birthday 
           </p>
           <CountdownClock />
           <button className="show-composer-btn" onClick={toggleComposer}>

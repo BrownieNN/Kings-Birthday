@@ -45,7 +45,7 @@ const Lightbox = ({ userName, recipientName, toggleLightbox }) => {
           <p>I respectfully invite you to approve this request.</p>
           <p>Kind regards,<br />{userName || '[Your Name]'}</p>
           <div className="disclaimer">
-          This document is official material from the Office of Lang Park & endorsed by the true “King” Sir Wally Lewis  
+          This document is officially sanctioned by the Office of Lang Park & endorsed by the true “King” Sir Wally Lewis  
           </div>
         </div>
         <img src={closeBtn} alt="close" className="close-btn" onClick={toggleLightbox} />

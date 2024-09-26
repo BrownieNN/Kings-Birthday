@@ -51,7 +51,7 @@
 }
 
 .left-column img{
-  width: 60%;
+  width: 50%;
 }
 
 .left-column h1 {
@@ -501,6 +501,11 @@ textarea:focus, input:focus{
     overflow: auto;
 
   }
+  .lightbox-actions {
+    padding-bottom: 12px;
+    padding-top: 16px;
+  }
+
   .lightbox-actions h2{
     font-size: 24px;
   }
@@ -548,20 +553,24 @@ textarea:focus, input:focus{
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .lightbox-content .letterhead {
-    transform: scale(0.8); /* Scale slightly smaller on tablets */
-    position: absolute;
-    left:0px;
-    top:50px;
-    transform-origin:top left;
+  .lightbox-content {
+    width: 95%;
+    height: 95%;
+    overflow: auto;
   }
-  
+  .letterhead {
+    transform: translate(-50%, -50%) scale(0.6); /* Adjust scale as needed */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
 }
 
 @media (min-width: 1025px) {
   .lightbox-content .letterhead {
     transform: scale(1); /* Full size on desktops */
   }
+  
 }
 
 
