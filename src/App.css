@@ -33,6 +33,15 @@
   padding: 20px;
   text-align: left;
   color: white;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: translateY(20px); /* Start position */
+  opacity: 0; /* Start with invisible */
+}
+
+.left-column.animate {
+  transform: translateY(0); /* End position */
+  opacity: 1; /* Make visible */
+  transition-delay: 0.5s; /* Add a 200ms delay */
 }
 
 .left-column, .sports-pick-logo{
@@ -169,92 +178,6 @@ textarea {
   height: 100%;
   overflow: auto;
 }
-
-
-/* Media Queries to Scale Letterhead on Smaller Screens */
-@media (max-width: 768px) {
-  .App {
-    overflow: auto;
-    background-image: url('./assets/mobile-bg.png');
-  }
-
-  .container{
-    width: 85%;
-    gap: 0px;
-  }
-  .letterhead {
-    transform: translate(-50%, -50%) scale(0.45); /* Adjust scale as needed */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-  }
-  .lightbox-content {
-    width: 95%;
-    height: 95%;
-    overflow: auto;
-
-  }
-
-  .countdown-number {
-    font-size: 32px !important;
-    width: 65px !important;
-    height: 65px !important;
-  }
-
-  .countdown-label{
-    font-size: 14px;
-  }
-
-  .letterhead-info{
-    padding: 8px 16px 8px 16px;
-  }
-
-  .letterhead-info p{
-    margin: 0px;
-    text-align: left;
-    font-size: 11px !important;
-  }
-
-  .lightbox-content {
-    width: 95%;
-    height: 95%;
-    border: 1px solid pink;
-    overflow: auto;
-  }
-
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .left-column, .right-column {
-    width: 100% !important;
-    text-align: center;
-    padding: 0px;
-  }
-
-  .right-column {
-    margin-top: 20px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .lightbox-content .letterhead {
-    transform: scale(0.8); /* Scale slightly smaller on tablets */
-    position: absolute;
-    left:0px;
-    top:50px;
-    transform-origin:top left;
-  }
-  
-}
-
-@media (min-width: 1025px) {
-  .lightbox-content .letterhead {
-    transform: scale(1); /* Full size on desktops */
-  }
-}
-
 
 /* App.css */
 .composer-wrapper {
@@ -553,6 +476,92 @@ textarea:focus, input:focus{
   font-size: 10px;
   padding: 8px 24px;
   margin: 0px;
+}
+
+/* Media Queries to Scale Letterhead on Smaller Screens */
+@media (max-width: 768px) {
+  .App {
+    overflow: auto;
+    background-image: url('./assets/mobile-bg.png');
+  }
+
+  .container{
+    width: 90%;
+    gap: 0px;
+  }
+  .letterhead {
+    transform: translate(-50%, -50%) scale(0.45); /* Adjust scale as needed */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  .lightbox-content {
+    width: 95%;
+    height: 95%;
+    overflow: auto;
+
+  }
+  .lightbox-actions h2{
+    font-size: 24px;
+  }
+
+  .countdown-number {
+    font-size: 32px !important;
+    width: 65px !important;
+    height: 65px !important;
+  }
+
+  .countdown-label{
+    font-size: 14px;
+  }
+
+  .letterhead-info{
+    padding: 8px 16px 8px 16px;
+  }
+
+  .letterhead-info p{
+    margin: 0px;
+    text-align: left;
+    font-size: 11px !important;
+  }
+
+  .lightbox-content {
+    width: 95%;
+    height: 95%;
+    overflow: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-column, .right-column {
+    width: 100% !important;
+    text-align: center;
+    padding: 0px;
+  }
+
+  .right-column {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .lightbox-content .letterhead {
+    transform: scale(0.8); /* Scale slightly smaller on tablets */
+    position: absolute;
+    left:0px;
+    top:50px;
+    transform-origin:top left;
+  }
+  
+}
+
+@media (min-width: 1025px) {
+  .lightbox-content .letterhead {
+    transform: scale(1); /* Full size on desktops */
+  }
 }
 
 

@@ -1,5 +1,5 @@
 // App.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Composer from './components/composer';
 import Lightbox from './components/lighbox'; // Ensure the correct import name
 import CountdownClock from './components/countdownClock';
@@ -14,6 +14,7 @@ function App() {
   const [showModal, setShowModal] = useState(false); // State for the modal
   const [userName, setUserName] = useState('');
   const [recipientName, setRecipientName] = useState('');
+  const [isLeftColumnAnimated, setIsLeftColumnAnimated] = useState(false); // New state for animation
 
   const toggleComposer = () => {
     if (isComposerVisible) {
@@ -36,11 +37,20 @@ function App() {
     setIsLightboxOpen(!isLightboxOpen);
   };
 
+  // Trigger left column animation on mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLeftColumnAnimated(true);
+    }, 100); // Delay to allow the component to mount
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="App">
       <div className="container">
-        <div className="left-column">
-          <div className='sports-pick-logo'>
+      <div className={`left-column ${isLeftColumnAnimated ? 'animate' : ''}`}>
+        <div className='sports-pick-logo'>
             <img src={Logo} alt="Sporst Pick"/>
           </div>
         <img src={Lockup} alt="Description of the SVG" style={{ width: '100%', height: 'auto' }} />
