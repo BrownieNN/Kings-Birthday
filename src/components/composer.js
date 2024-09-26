@@ -63,7 +63,7 @@ ${userName || '[Your Name]'}`;
         <div className='button-group'>
           <img src={Minus} alt='Minus' />
           <img src={Resize} alt='Resize' />
-          <img src={Close} alt='Close' />
+          <img src={Close} alt='Close'  onClick={toggleComposer}  />
         </div>
       </div>
       <h2>Formal Request for Public Holiday Substitution</h2>
