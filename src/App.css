@@ -52,12 +52,12 @@
 }
 
 .sports-pick-logo img{
-  width: 80%;
+  width: 60%;
   margin: auto;
 }
 
 .left-column img{
-  width: 50%;
+  width: 40%;
 }
 
 .left-column h1 {
@@ -70,10 +70,10 @@
 
 .left-column p {
   font-size: 1.2em;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
   text-align: center;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 400;
   font-style: normal;
   margin-top: 16px;
@@ -86,10 +86,12 @@
   background: #FF0003;
   font-weight: 950;
   color: white;
-  font-size: 24px;
+  font-size: 18px;
   text-align: center;
   border: none;
   text-transform: uppercase;
+  width: 80%;
+  margin: 0px auto;
 }
 
 .right-column {
@@ -206,7 +208,9 @@ textarea {
 .countdown-clock {
   display: flex;
   justify-content: space-around;
-  margin: 20px 0;
+  margin: 16px auto;
+  width: 80%;
+
 }
 
 .countdown-item {
@@ -216,14 +220,14 @@ textarea {
 
 .countdown-number {
   display: block;
-  font-size: 42px;
+  font-size: 36px;
   font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
   font-weight: 900;
   font-style: italic;
   text-transform: uppercase;
   display: flex;
-  width: 74px;
-  height: 74px;
+  width: 60px;
+  height: 60px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
