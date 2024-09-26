@@ -23,13 +23,13 @@ const Composer = ({ toggleComposer, setUserName, setRecipientName, toggleLightbo
 
   const draftEmail = `Dear ${recipientName || '[Chief\'s Name]'},
     
-As you’re aware, the public holiday substitution clause of our workplace agreement allows employees to swap public holidays for others dates of personal or national significance.
+As you know, the public holiday substitution clause in our workplace agreement permits employees to request a swap of public holidays for dates of personal or cultural importance, subject to employer approval.
 
 The King’s Birthday public holiday will be observed on 7 October, this year. However, as a proud Queenslander, I choose to recognise the true “King” – Sir Wally Lewis of Lang Park - not the figure who resides in a castle in England, but a rugby league legend whose glorious moustache and highlight reel is unmatched.
 
-With King Wally’s birthday being Sunday, December 1st, I am writing to request a substitution of the King’s Birthday public holiday with Monday, 2 December, affording me sufficient time to honour King Wally’s legacy with an extended weekend – similar to the long weekend we enjoy for King Charles III of Windsor.
+With King Wally’s birthday being Sunday, December 1st, I am writing to request a substitution of the King’s Birthday public holiday with Monday, 2 December, affording me sufficient time to honour King Wally’s legacy with an extended weekend – similar to the long weekend we enjoy for King Charles III of Windsor. 
 
-I respectfully invite you to approve this request.
+I respectfully invite you to approve this request. 
 
 Kind regards,
 ${userName || '[Your Name]'}`;

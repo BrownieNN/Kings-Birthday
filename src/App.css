@@ -31,6 +31,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 20px;
+  margin-top: 30px;
   text-align: left;
   color: white;
   transition: transform 0.5s ease, opacity 0.5s ease;
@@ -45,9 +46,14 @@
 }
 
 .left-column, .sports-pick-logo{
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   display: flex;
   justify-content: center;
+}
+
+.sports-pick-logo img{
+  width: 80%;
+  margin: auto;
 }
 
 .left-column img{
@@ -70,6 +76,7 @@
   font-size: 21px;
   font-weight: 400;
   font-style: normal;
+  margin-top: 16px;
 }
 
 .show-composer-btn {
@@ -553,6 +560,7 @@ textarea:focus, input:focus{
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+
   .lightbox-content {
     width: 95%;
     height: 95%;
@@ -570,7 +578,6 @@ textarea:focus, input:focus{
   .lightbox-content .letterhead {
     transform: scale(1); /* Full size on desktops */
   }
-  
 }
 
 

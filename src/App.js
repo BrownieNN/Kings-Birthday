@@ -63,7 +63,7 @@ function App() {
         <div className='sports-pick-logo'>
             <img src={Logo} alt="Sporst Pick"/>
           </div>
-        <img src={Lockup} alt="Description of the SVG" style={{ width: '100%', height: 'auto' }} />
+        <img src={Lockup} alt="Description of the SVG" style={{ width: '90%', height: 'auto', margin:'0px auto' }} />
           <p>
           Request to swap the King's birthday public holiday for the real King's Birthday 
           </p>
