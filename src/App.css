@@ -507,6 +507,18 @@ textarea:focus, input:focus{
     top: 50%;
     left: 50%;
   }
+  .countdown-clock {
+    display: flex;
+    justify-content: space-around;
+    margin: 16px auto;
+    width: 90%;
+  
+  }
+
+  .show-composer-btn {
+    width: 90%;
+  }
+
   .lightbox-content {
     width: 95%;
     height: 95%;
@@ -523,9 +535,9 @@ textarea:focus, input:focus{
   }
 
   .countdown-number {
-    font-size: 32px !important;
-    width: 65px !important;
-    height: 65px !important;
+    font-size: 28px !important;
+    width: 60px !important;
+    height: 60px !important;
   }
 
   .countdown-label{
