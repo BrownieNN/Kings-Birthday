@@ -1,0 +1,559 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./assets/hero.png');
+  background-size: cover;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  gap: 54px;
+  justify-content: space-between;
+  width: 80%;
+  height: 80%;
+  max-width: 1200px;
+}
+
+.left-column {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  text-align: left;
+  color: white;
+}
+
+.left-column, .sports-pick-logo{
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.left-column img{
+  width: 60%;
+}
+
+.left-column h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.left-column p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 21px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.show-composer-btn {
+  padding: 16px 24px;
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  border-radius: 8px;
+  background: #FF0003;
+  font-weight: 950;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  border: none;
+  text-transform: uppercase;
+}
+
+.right-column {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+input, textarea {
+  width: 100%;
+  display: flex;
+  padding: 12px 24px;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border: none;
+  background: white;
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+
+}
+
+textarea {
+  height: 350px;
+}
+
+.close-btn {
+  position: fixed;
+  top: 10px;
+  width: 32px;
+  height: 32px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 1001; /* Ensure they are on top */
+}
+
+.close-btn {
+  right: 10px; /* Close button on the right */
+}
+
+/* Ensure the letterhead maintains A4 ratio and isn't responsive */
+.letterhead {
+  width: 210mm; /* A4 width */
+  height: 297mm; /* A4 height */
+  padding: 20mm;
+  position: relative; /* Make it easier to position logo */
+  background-image: url('./assets/background.png');  /*Add texture */
+  background-size: cover; /* Ensure background covers the entire area */
+  text-align: left;
+}
+
+.letterhead p{
+  font-family: 'itc-american-typewriter', 'Times New Roman', Times, serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #1C1C1C;
+  font-size: 15px;
+  line-height: 28px; /* 127.273% */
+  letter-spacing: 0.33px;
+}
+
+.logo {
+  width: 60mm; /* Adjust as needed */
+  height: auto; /* Maintain logo aspect ratio */
+  margin: auto;
+  display: block;
+  margin-bottom: 54px;
+}
+
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+
+.lightbox-content {
+  position: relative;
+  width: auto;
+  height: 100%;
+  overflow: auto;
+}
+
+
+/* Media Queries to Scale Letterhead on Smaller Screens */
+@media (max-width: 768px) {
+  .App {
+    overflow: auto;
+    background-image: url('./assets/mobile-bg.png');
+  }
+
+  .container{
+    width: 85%;
+    gap: 0px;
+  }
+  .letterhead {
+    transform: translate(-50%, -50%) scale(0.45); /* Adjust scale as needed */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  .lightbox-content {
+    width: 95%;
+    height: 95%;
+    overflow: auto;
+
+  }
+
+  .countdown-number {
+    font-size: 32px !important;
+    width: 65px !important;
+    height: 65px !important;
+  }
+
+  .countdown-label{
+    font-size: 14px;
+  }
+
+  .letterhead-info{
+    padding: 8px 16px 8px 16px;
+  }
+
+  .letterhead-info p{
+    margin: 0px;
+    text-align: left;
+    font-size: 11px !important;
+  }
+
+  .lightbox-content {
+    width: 95%;
+    height: 95%;
+    border: 1px solid pink;
+    overflow: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-column, .right-column {
+    width: 100% !important;
+    text-align: center;
+    padding: 0px;
+  }
+
+  .right-column {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .lightbox-content .letterhead {
+    transform: scale(0.8); /* Scale slightly smaller on tablets */
+    position: absolute;
+    left:0px;
+    top:50px;
+    transform-origin:top left;
+  }
+  
+}
+
+@media (min-width: 1025px) {
+  .lightbox-content .letterhead {
+    transform: scale(1); /* Full size on desktops */
+  }
+}
+
+
+/* App.css */
+.composer-wrapper {
+  width: 50%;
+  transition: transform 0.5s ease;
+  opacity: 0;
+}
+
+.slide-up {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.slide-down {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.countdown-clock {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.countdown-item {
+  text-align: center;
+  display: block;
+}
+
+.countdown-number {
+  display: block;
+  font-size: 42px;
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  display: flex;
+  width: 74px;
+  height: 74px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  border: 3px solid #FFF;
+  background: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(2.7431693077087402px);
+  margin-bottom: 16px;
+}
+
+.countdown-label {
+  display: block;
+  font-size: 20px;
+  color: White;
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+/* src/components/ConfirmationModal.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #FF0003;
+  padding: 32px;
+  border-radius: 8px;
+  text-align: center;
+  width: 320px;
+}
+
+.primary-btn {
+  display: flex;
+  padding: 10px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+  border-radius: 8px;
+  background: #FFF;
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  border: none;
+  color:#FF0003;
+  text-transform: uppercase;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  display: flex;
+  padding: 10px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+  border-radius: 8px;
+  border: 1px solid white;
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  border: 1px solid white;
+  font-weight: 800;;
+  background: #FF0003;
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.modal-content h2{
+  color: #FFF;
+  text-align: center;
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 28px; /* 116.667% */
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  margin-top: 0px;
+}
+
+.modal-buttons {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  align-self: stretch;
+}
+
+.composer-container{
+  background: white;
+  border-radius: 8px;
+  padding-top: 16px;
+  overflow: auto;
+}
+
+.composer-container h2{
+  color: #000;
+  text-align: center;
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  border-bottom: 1px solid #F0F0F0;
+  margin: 0px;
+}
+
+.composer-header{
+  display: flex;
+  padding: 0px 24px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;  
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.field-wrapper {
+  border-bottom: 1px solid #F0F0F0;
+  width: 100%; 
+}
+
+.letterhead-info{
+  display: flex;
+  padding: 8px 24px 16px 24px;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.letterhead-info img{
+  width: 32px;
+  height: auto;
+}
+
+.letterhead-info p{
+  width: 100%;
+  flex: 1 0 0;
+  color: #2C2C34;
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.letterhead-button {
+  border-radius: 8px;
+  background: #FF0003;
+  padding: 8px 16px;
+  color: white;
+  border: none;
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.action-bar {
+  display: flex;
+  padding: 16px 24px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  background: #F7F7F7;
+}
+
+.send-button {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 2.194px;
+  border-radius: 4px;
+  background: #FF0003;
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  transition: background 0.3s ease, opacity 0.3s ease;
+}
+
+.send-button:disabled {
+  background: #808284; /* Grey background when disabled */
+  cursor: not-allowed; /* Change cursor to indicate it's disabled */
+  opacity: 0.5; /* Make it visually appear 'inactive' */
+}
+
+.disclaimer{
+  position: absolute;
+  bottom: 54px;
+  width: 100%;
+  left: 0px;
+  color: #A22424;
+  text-align: center;
+  font-family: 'itc-american-typewriter', 'Times New Roman', Times, serif;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 10px; /* 125% */
+  letter-spacing: 0.24px;
+}
+
+.lightbox-actions{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 32px;
+  padding-bottom: 24px;
+}
+
+.lightbox-actions h2 {
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 32px;
+  color: white;
+  margin: 0px;
+}
+
+.error-text {
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: #FF0003;
+  font-size: 10px;
+  padding: 8px 24px;
+  margin: 0px;
+}
+
+
+
