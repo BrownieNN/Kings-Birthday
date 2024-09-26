@@ -329,7 +329,6 @@ textarea {
   background: white;
   border-radius: 8px;
   padding-top: 16px;
-  overflow: auto;
 }
 
 .composer-container h2{
@@ -420,6 +419,8 @@ textarea:focus, input:focus{
   gap: 8px;
   align-self: stretch;
   background: #F7F7F7;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .send-button {
