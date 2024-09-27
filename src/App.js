@@ -54,7 +54,7 @@ function App() {
       <Helmet>
         <title>Celebrate your legal right to honour the real king</title>
         <meta name="description" content="Request to swap the King's birthday public holiday for the real King's Birthday" />
-        <meta property="og:title" content="Celebrate your legal right to honour the real king" />
+        <meta property="og:title" content="Celebrate your right to honour the real king" />
         <meta property="og:description" content="Request to swap the King's birthday public holiday for the real King's Birthday" />
         <meta property="og:image" content="https://therealking.com.au/meta-image.png" />
         <meta property="og:url" content="https://therealking.com.au" />
