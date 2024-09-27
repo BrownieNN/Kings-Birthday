@@ -55,13 +55,15 @@ function App() {
         <meta name="description" content="Request to swap the King's birthday public holiday for the real King's Birthday" />
         <meta property="og:title" content="Celebrate your legal right to honour the real king" />
         <meta property="og:description" content="Request to swap the King's birthday public holiday for the real King's Birthday" />
-        <meta property="og:image" content={`${process.env.PUBLIC_URL}/meta-image.png`} />
+        <meta property="og:image" content="https://therealking.com.au/meta-image.png" />
         <meta property="og:url" content="https://therealking.com.au" />
       </Helmet>
       <div className="container">
       <div className={`left-column ${isLeftColumnAnimated ? 'animate' : ''}`}>
         <div className='sports-pick-logo'>
+        <a href="https://sportspick.com.au/" target="_blank" rel="noopener noreferrer">
             <img src={Logo} alt="Sporst Pick"/>
+            </a>
           </div>
         <img src={Lockup} alt="Description of the SVG" style={{ width: '80%', height: 'auto', margin:'0px auto' }} />
           <p>

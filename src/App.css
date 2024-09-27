@@ -56,8 +56,12 @@
   margin: auto;
 }
 
+.sports-pick-logo a{
+  text-align: center;
+}
+
 .left-column img{
-  width: 40%;
+  width: 50%;
 }
 
 .left-column h1 {
