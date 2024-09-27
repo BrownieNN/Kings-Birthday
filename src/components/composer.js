@@ -23,7 +23,7 @@ const Composer = ({ toggleComposer, setUserName, setRecipientName, toggleLightbo
 
   const draftEmail = `Dear ${recipientName || '[Chief\'s Name]'},
     
-As you know, in many workplace agreement contracts there is a public holiday substitution clause that permits employees to request a swap of public holidays for dates of personal or cultural importance, subject to employer approval.
+As you may know, in many workplace agreement contracts there is a public holiday substitution clause that permits employees to request a swap of public holidays for dates of personal or cultural importance, subject to employer approval.
 
 The King’s Birthday public holiday will be observed on 7 October, this year. However, as a proud Queenslander, I choose to recognise the true “King” – Sir Wally Lewis of Lang Park - not the figure who resides in a castle in England, but a rugby league legend whose glorious moustache and highlight reel is unmatched.
 

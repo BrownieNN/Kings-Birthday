@@ -50,6 +50,7 @@ function App() {
   return (
     
     <div className="App">
+      <div className="disclaimer">*This marketing campaign does not constitute legal advice/information. We do not claim the ability to request public holiday substitution is a right. Consider your own employment conditions before seeking any changes to your employment arrangements.</div>
       <Helmet>
         <title>Celebrate your legal right to honour the real king</title>
         <meta name="description" content="Request to swap the King's birthday public holiday for the real King's Birthday" />
