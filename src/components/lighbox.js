@@ -39,7 +39,7 @@ const Lightbox = ({ userName, recipientName, toggleLightbox }) => {
         <div className="letterhead">
           <img src={logo} alt="Logo" className="logo" />
           <p>Dear {recipientName || '[Chief\'s Name]'}</p>
-          <p>As you know, the public holiday substitution clause in our workplace agreement permits employees to request a swap of public holidays for dates of personal or cultural importance, subject to employer approval.</p>
+          <p>As you know, in many workplace agreement contracts there is a public holiday substitution clause that permits employees to request a swap of public holidays for dates of personal or cultural importance, subject to employer approval.</p>
           <p>The King’s Birthday public holiday will be observed on 7 October, this year. However, as a proud Queenslander, I choose to recognise the true “King” – Sir Wally Lewis of Lang Park - not the figure who resides in a castle in England, but a rugby league legend whose glorious moustache and highlight reel is unmatched.</p>
           <p>With King Wally’s birthday being Sunday, December 1st, I am writing to request a substitution of the King’s Birthday public holiday with Monday, 2 December, affording me sufficient time to honour King Wally’s legacy with an extended weekend – similar to the long weekend we enjoy for King Charles III of Windsor.</p>
           <p>I respectfully invite you to approve this request.</p>
