@@ -1,6 +1,7 @@
 // App.js
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import ReactGA from "react-ga4";
 import Composer from './components/composer';
 import Lightbox from './components/lighbox'; // Ensure the correct import name
 import CountdownClock from './components/countdownClock';
@@ -16,6 +17,9 @@ function App() {
   const [userName, setUserName] = useState('');
   const [recipientName, setRecipientName] = useState('');
   const [isLeftColumnAnimated, setIsLeftColumnAnimated] = useState(false); // New state for animation
+
+  ReactGA.initialize("G-FZ43Z0MNZ4");
+  ReactGA.send({ hitType: "pageview", page: window.location.pathname });
 
   const toggleComposer = () => {
     if (isComposerVisible) {

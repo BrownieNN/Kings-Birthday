@@ -7,6 +7,8 @@ import Resize from '../assets/Resize.svg';
 import Thumbnail from '../assets/thumbnail.png';
 import Bin from '../assets/bin.svg';
 import DOMPurify from 'dompurify';
+import ReactGA from "react-ga4";
+
 
 const Composer = ({ toggleComposer, setUserName, setRecipientName, toggleLightbox }) => {
   const [userName, setUserNameState] = useState('');
@@ -121,9 +123,19 @@ ${userName || '[Your Name]'}`;
       </div>
       <div className="action-bar">
         <img src={Bin} alt="bin icon" className="close-composer-btn" onClick={toggleComposer} />
-        <button className="send-button" onClick={handleMailto}>
-          Copy official TEMPLATE
-        </button>
+        <button
+             className="send-button"
+             onClick={() => {
+               ReactGA.event({
+                 category: "Template",
+                 action: "Copy Official Template",
+                 label: "Copy Template Button",
+               });
+               handleMailto();
+             }}
+            >
+             Copy official TEMPLATE
+            </button>
       </div>
     </div>
   );

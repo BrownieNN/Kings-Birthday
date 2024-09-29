@@ -6,6 +6,7 @@ import logo from '../assets/emblem.png'; // Assuming the logo path is correct
 import closeBtn from '../assets/red-close.svg';
 import '../App.css';
 import DOMPurify from 'dompurify';
+import ReactGA from "react-ga4";
 
 const Lightbox = ({ userName, recipientName, toggleLightbox }) => {
 
@@ -34,7 +35,20 @@ const Lightbox = ({ userName, recipientName, toggleLightbox }) => {
       <div className="lightbox-content">
       <div className="lightbox-actions">
         <h2>OFFICIAL LETTERHEAD</h2>
-        <button className="primary-btn" onClick={generatePDF}>Download PDF</button>
+        <button
+          className="primary-btn"
+          onClick={() => {
+            ReactGA.event({
+              category: "PDF",
+              action: "Download PDF",
+              label: "Download PDF Button",
+            });
+            generatePDF();
+          }}
+        >
+          Download PDF
+        </button>
+
         </div>
         <div className="letterhead">
           <img src={logo} alt="Logo" className="logo" />
