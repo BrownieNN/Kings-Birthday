@@ -8,6 +8,7 @@ import Thumbnail from '../assets/thumbnail.png';
 import Bin from '../assets/bin.svg';
 import DOMPurify from 'dompurify';
 import ReactGA from "react-ga4";
+import CopyModal from "../components/copyModal";
 
 
 const Composer = ({ toggleComposer, setUserName, setRecipientName, toggleLightbox }) => {
@@ -17,6 +18,9 @@ const Composer = ({ toggleComposer, setUserName, setRecipientName, toggleLightbo
   const [emailError, setEmailError] = useState(''); // State for email error message
   const [isFormComplete, setIsFormComplete] = useState(false);
   const sanitizeInput = (input) => DOMPurify.sanitize(input);
+  const [isCopyButtonEnabled, setIsCopyButtonEnabled] = useState(false); // State for copy button
+  const [alertMessage, setAlertMessage] = useState(''); // State for alert message
+  const [showAlert, setShowAlert] = useState(false); // State to control alert visibility
 
   const isValidEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -50,11 +54,30 @@ ${userName || '[Your Name]'}`;
     window.location.href = mailtoLink;
   };
 
+  const handleCopyToClipboard = () => {
+    navigator.clipboard.writeText(draftEmail).then(() => {
+      setAlertMessage("Email template copied!");
+      setShowAlert(true); // Show the alert
+    });
+  };
+
+  const handleCloseAlert = () => {
+    setShowAlert(false); // Close the alert
+  };
+
+
   useEffect(() => {
     if (userName && recipientName && recipientEmail && !emailError) {
       setIsFormComplete(true);
     } else {
       setIsFormComplete(false);
+    }
+
+    // Enable the copy button when both "Your Name" and "Chief's Name" are filled out
+    if (userName && recipientName) {
+      setIsCopyButtonEnabled(true);
+    } else {
+      setIsCopyButtonEnabled(false);
     }
   }, [userName, recipientName, recipientEmail, emailError]);
 
@@ -123,6 +146,21 @@ ${userName || '[Your Name]'}`;
       </div>
       <div className="action-bar">
         <img src={Bin} alt="bin icon" className="close-composer-btn" onClick={toggleComposer} />
+        <div className="action-group">
+        <button
+          className="third-btn"
+          onClick={() => {
+            ReactGA.event({
+              category: "Button",
+              action: "Copy Template Clicked",
+              label: "Copy Template Button",
+            });
+            handleCopyToClipboard(); // Call the function to copy to clipboard
+          }}
+          disabled={!isCopyButtonEnabled} // Disable button if the fields are not filled
+        >
+          Copy
+        </button>
         <button
              className="send-button"
              onClick={() => {
@@ -134,8 +172,10 @@ ${userName || '[Your Name]'}`;
                handleMailto();
              }}
             >
-             Copy official TEMPLATE
-            </button>
+             Open your email
+        </button>
+        </div>
+        {showAlert && <CopyModal message={alertMessage} onClose={handleCloseAlert} />}
       </div>
     </div>
   );

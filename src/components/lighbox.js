@@ -58,7 +58,7 @@ const Lightbox = ({ userName, recipientName, toggleLightbox }) => {
           <p>With King Wally’s birthday being Sunday, December 1st, I am writing to request a substitution of the King’s Birthday public holiday with Monday, 2 December, affording me sufficient time to honour King Wally’s legacy with an extended weekend – similar to the long weekend we enjoy for King Charles III of Windsor.</p>
           <p>I respectfully invite you to approve this request.</p>
           <p>Kind regards,<br />{userName || '[Your Name]'}</p>
-          <div className="disclaimer">
+          <div className="disclaimer-letter">
           This document is officially sanctioned by the Office of Lang Park & endorsed by the true “King” Sir Wally Lewis  
           </div>
         </div>

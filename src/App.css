@@ -452,7 +452,7 @@ textarea:focus, input:focus{
   opacity: 0.5; /* Make it visually appear 'inactive' */
 }
 
-.disclaimer{
+.disclaimer-letter{
   position: absolute;
   bottom: 54px;
   width: 100%;
@@ -505,6 +505,58 @@ textarea:focus, input:focus{
   font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
   padding: 0px 24px;
   margin: 0px;
+}
+
+.alert-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background-color: #000000c6; /* Green background */
+  color: white; /* White text */
+  border-radius: 20px;
+  text-align: center;
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  z-index: 1000;
+  transition: opacity 1s ease;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.action-group{
+  display: flex;
+  gap: 16px;
+}
+
+.third-btn {
+  display: flex;
+  padding: 10px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+  border-radius: 4px;
+  background: #ffffff00;
+  font-family: 'ff-good-web-pro-condensed', Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  border: 2px solid #FF0003;
+  color:#FF0003;
+  text-transform: uppercase;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.third-btn:disabled {
+  cursor: not-allowed; /* Change cursor to indicate it's disabled */
+  opacity: 0.2; /* Make it visually appear 'inactive' */
 }
 
 /* Media Queries to Scale Letterhead on Smaller Screens */
@@ -590,6 +642,9 @@ textarea:focus, input:focus{
 
   .right-column {
     margin-top: 20px;
+  }
+  .composer-container h2{
+    font-size: 17px;
   }
 }
 
